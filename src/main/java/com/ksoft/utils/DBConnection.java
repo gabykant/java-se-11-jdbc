@@ -66,11 +66,45 @@ public class DBConnection {
         return output.isEmpty() ? null : output;
     }
 
+    public Personne getPersonneById(int id) { 
+        Personne p = new Personne();
+        String sql = "SELECT firstname, lastname, age, id FROM personne WHERE id = ?";
+        try(Connection conn = connect(); 
+            PreparedStatement statement = conn.prepareStatement(sql) 
+            ){
+                statement.setInt(1, id);
+                ResultSet resultSet = statement.executeQuery(); 
+                
+            while (resultSet.next()) {
+                p.setFirstname(resultSet.getString(1)); 
+                p.setLastname(resultSet.getString(2)); 
+                p.setAge(resultSet.getInt(3));
+                p.setId(resultSet.getInt(4)); 
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return p;
+    }
+
     public void delete(int personneId) {
         String sql = "DELETE FROM personne WHERE id = ?";
         try(Connection conn = connect();
             PreparedStatement statement = conn.prepareStatement(sql)) {
                 statement.setInt(1, personneId);
+                statement.executeUpdate();
+            } catch(SQLException e) {
+                e.printStackTrace();
+            }
+    }
+
+    public void modify(Personne personne, int id) {
+        String sql = "UPDATE personne SET firstname = ? ,lastname = ? WHERE id = ?";
+        try(Connection conn = connect();
+            PreparedStatement statement = conn.prepareStatement(sql)) {
+                statement.setInt(3, id);
+                statement.setString(1, personne.getFirstname());
+                statement.setString(2, personne.getLastname());
                 statement.executeUpdate();
             } catch(SQLException e) {
                 e.printStackTrace();

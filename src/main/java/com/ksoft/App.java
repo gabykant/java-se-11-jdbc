@@ -27,5 +27,8 @@ public class App
             p.getAge();
         }
         dbConnection.delete(2);
+        Personne p = dbConnection.getPersonneById(5);
+        Personne p2 = new Personne("Herve", "Renard", 47);
+        dbConnection.modify(p2, 5);
     }
 }

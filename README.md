@@ -38,6 +38,7 @@ The main objective of this project is to demonstrate how to connect to a databas
 + Create a PostgreSQL database named testpersonne.
 + Configure the application.properties file with your database credentials (username, password, port).
 + Use Maven commands to compile and run the application:
-  + mvn clean compile to compile the project.
-  + mvn exec:java to execute the code.
+  + _mvn clean compile_ to compile the project.
+  + _mvn exec:java_ to execute the code.
+  + _mvn clean compile exec:java_ to compile and execute the code
 + Test CRUD functionalities.

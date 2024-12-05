@@ -65,4 +65,15 @@ public class DBConnection {
          
         return output.isEmpty() ? null : output;
     }
+
+    public void delete(int personneId) {
+        String sql = "DELETE FROM personne WHERE id = ?";
+        try(Connection conn = connect();
+            PreparedStatement statement = conn.prepareStatement(sql)) {
+                statement.setInt(1, personneId);
+                statement.executeUpdate();
+            } catch(SQLException e) {
+                e.printStackTrace();
+            }
+    }
 }

@@ -26,5 +26,6 @@ public class App
             p.getLastname();
             p.getAge();
         }
+        dbConnection.delete(2);
     }
 }

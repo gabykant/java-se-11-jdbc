@@ -4,11 +4,17 @@
 This project is a Java SE 11 application designed to manage a database of people using PostgreSQL. It showcases fundamental software development concepts and technologies, including:
 
 __Java SE 11:__ Object-oriented programming for data manipulation.
+
 __PostgreSQL:__ Relational database management for storing and retrieving information.
+
 __JDBC:__ Connecting to the database and executing SQL queries.
+
 __Maven:__ A project management and build tool used to structure the application and manage dependencies.
+
 __Unit Testing with JUnit:__ Ensuring the robustness of the application's core methods and functionalities.
+
 __Configuration Files:__ Leveraging .properties files to manage database connection settings.
+
 The main objective of this project is to demonstrate how to connect to a database using JDBC and implement basic CRUD (Create, Read, Update, Delete) operations on a PostgreSQL table.
 
 ## Features

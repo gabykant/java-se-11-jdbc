@@ -35,8 +35,10 @@ The main objective of this project is to demonstrate how to connect to a databas
   - Git for version control
 
 ## How to Run
-+ Create a PostgreSQL database named testpersonne.
++ Create a PostgreSQL database named _testpersonne_ .
 + Configure the application.properties file with your database credentials (username, password, port).
++ Use Maven from command line to create a project: _mvn archetype:generate -DgroupId=com.ksoft -DartifactId=java-se-11-jdbc -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false_
+
 + Use Maven commands to compile and run the application:
   + _mvn clean compile_ to compile the project.
   + _mvn exec:java_ to execute the code.
